@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Return-Open-Orders-Mock">
+    <DisplayName>Return Open Orders Mock</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
+                {
+    "getOpenOrdersResponse": {
+        "order": [
+            {
+                "orderId": 160,
+                "orderTimestamp": 1471651086738,
+                "status": "OPEN",
+                "orderRequest": {
+                    "customerId": 1052,
+                    "comment": "Order 160 for customer 1052",
+                    "orderItem": [
+                        {
+                            "productId": 479064871,
+                            "productManufacturer": "Nike",
+                            "productDescription": "Amazing Nike Sandal",
+                            "productName": "Sandal",
+                            "quantity": 1
+                        },
+                        {
+                            "productId": 1080294468,
+                            "productManufacturer": "Vans",
+                            "productDescription": "Trendy Vans Loafer",
+                            "productName": "Loafer",
+                            "quantity": 3
+                        }
+                    ]
+                }
+            },
+            {
+                "orderId": 161,
+                "orderTimestamp": 1471651086738,
+                "status": "OPEN",
+                "orderRequest": {
+                    "customerId": 1052,
+                    "comment": "Order 161 for customer 1052",
+                    "orderItem": {
+                        "productId": 1395572252,
+                        "productManufacturer": "Vans",
+                        "productDescription": "Amazing Vans Heels",
+                        "productName": "Heels",
+                        "quantity": 1
+                    }
+                }
+            }
+        ]
+    }
+}
+            </Payload>
+            <StatusCode>200</StatusCode>
+            <ReasonPhrase>OK</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

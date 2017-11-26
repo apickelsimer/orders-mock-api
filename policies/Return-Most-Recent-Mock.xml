@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Return-Most-Recent-Mock">
+    <DisplayName>Return Most Recent Mock</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
+                {
+    "getMostRecentOrderResponse": {
+        "order": {
+            "orderId": 158,
+            "orderTimestamp": 1471651086738,
+            "status": "CLOSED",
+            "orderRequest": {
+                "customerId": 1052,
+                "comment": "Order 158 for customer 1052",
+                "orderItem": [
+                    {
+                        "productId": 88454930,
+                        "productManufacturer": "Nike",
+                        "productDescription": "Comfortable Nike Wingtip",
+                        "productName": "Wingtip",
+                        "quantity": 1
+                    },
+                    {
+                        "productId": 1010447500,
+                        "productManufacturer": "Ecco",
+                        "productDescription": "Affordable Ecco Wingtip",
+                        "productName": "Wingtip",
+                        "quantity": 1
+                    },
+                    {
+                        "productId": 216707574,
+                        "productManufacturer": "Steve Madden",
+                        "productDescription": "Stylish Steve Madden Flats",
+                        "productName": "Flats",
+                        "quantity": 1
+                    },
+                    {
+                        "productId": 551123043,
+                        "productManufacturer": "Nike",
+                        "productDescription": "Upscale Nike Boot",
+                        "productName": "Boot",
+                        "quantity": 1
+                    },
+                    {
+                        "productId": 1670966856,
+                        "productManufacturer": "Ecco",
+                        "productDescription": "Affordable Ecco Boot",
+                        "productName": "Boot",
+                        "quantity": 1
+                    }
+                ]
+            }
+        }
+    }
+}
+            </Payload>
+            <StatusCode>200</StatusCode>
+            <ReasonPhrase>OK</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

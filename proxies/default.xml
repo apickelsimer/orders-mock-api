@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="Create Order">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Return-Create-Mock</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Get Open Orders">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Return-Open-Orders-Mock</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>((request.queryparam.custId != "") or (request.queryparam.custId is null)) and (request.verb = "GET") and (proxy.pathsuffix JavaRegex "/?")</Condition>
+        </Flow>
+        <Flow name="Get Most Recent Order">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Return-Most-Recent-Mock</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix JavaRegex "/?") and (request.verb = "GET") and (request.queryparam.custId != "") and (request.queryparam.mostRecent != "y")</Condition>
+        </Flow>
+        <Flow name="Get Order by ID">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Return-Order-Mock</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/{orderId}") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Cancel Order">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Return-Cancel-Mock</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/{orderId}") and (request.verb = "DELETE")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/sandbox/orders/</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

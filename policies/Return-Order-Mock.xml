@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="Return-Order-Mock">
+    <DisplayName>Return Order Mock</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
+                {
+    "getOrderResponse": {
+        "order": {
+            "orderId": 2956,
+            "orderTimestamp": 1471651311399,
+            "status": "CLOSED",
+            "orderRequest": {
+                "customerId": 997,
+                "orderItem": {
+                    "productId": 10,
+                    "productManufacturer": "Sony",
+                    "productDescription": "Walkman",
+                    "productName": "Hipster music player from the 80s",
+                    "quantity": 2
+                }
+            },
+            "cancelConfirmation": 1723584314
+        }
+    }
+}
+            </Payload>
+            <StatusCode>200</StatusCode>
+            <ReasonPhrase>OK</ReasonPhrase>
+        </Set>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

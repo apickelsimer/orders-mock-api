@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="api-orders-mock-v1">
+    <Basepaths>/orders-mock</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1503442488152</CreatedAt>
+    <CreatedBy>defaultUser</CreatedBy>
+    <Description></Description>
+    <DisplayName>fz-orders-mock</DisplayName>
+    <LastModifiedAt>1503442654811</LastModifiedAt>
+    <LastModifiedBy>defaultUser</LastModifiedBy>
+    <Policies>
+        <Policy>Return-Cancel-Mock</Policy>
+        <Policy>Return-Create-Mock</Policy>
+        <Policy>Return-Most-Recent-Mock</Policy>
+        <Policy>Return-Open-Orders-Mock</Policy>
+        <Policy>Return-Order-Mock</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources/>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>false</validate>
+</APIProxy>
